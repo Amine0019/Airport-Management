@@ -26,6 +26,14 @@ namespace AM.Core.Services
               return flightDates;
         }
 
+        // returns a list of flight dates for a given destination using LINQ query syntax
+        public IList<DateTime> GetFlightDatesLNQ(string destination)
+        {
+            return (from flight in Flights
+                    where flight.Destination == destination
+                    select flight.FlightDate).ToList();
+        }
+
         // returns a list of flights based on a filter type and value
         public IList<Flight> GetFlights(string filterType, string filterValue)
         {
