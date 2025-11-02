@@ -12,6 +12,7 @@ namespace AM.Core.Services
     {
         public IList<Flight> Flights { get; set; }
 
+        // returns a list of flight dates for a given destination
         public IList<DateTime> GetFlightDates(string destination)
         {
            IList<DateTime> flightDates = new List<DateTime>();
@@ -23,6 +24,48 @@ namespace AM.Core.Services
                 }
               }
               return flightDates;
+        }
+
+        // returns a list of flights based on a filter type and value
+        public IList<Flight> GetFlights(string filterType, string filterValue)
+        {
+            switch(filterType)
+            {
+                case "Destination":
+                    return Flights.Where(f => f.Destination == filterValue).ToList();
+                case "Departure":
+                    return Flights.Where(f => f.Departure == filterValue).ToList();
+                case "FlightDate":
+                    if(DateTime.TryParse(filterValue, out DateTime date))
+                    {
+                        return Flights.Where(f => f.FlightDate.Date == date.Date).ToList();
+                    }
+                    break;
+                case "FlightId ":
+                    if(int.TryParse(filterValue, out int flightId))
+                    {
+                        return Flights.Where(f => f.FlightId == flightId).ToList();
+                    }
+                    break;
+
+                case "EffectiveArrival":
+                    if(DateTime.TryParse(filterValue, out DateTime effectiveArrival))
+                    {
+                        return Flights.Where(f => f.EffectiveArrival.Date == effectiveArrival.Date).ToList();
+                    }
+                    break;
+
+                case "EstimatedDuration":
+                    if(int.TryParse(filterValue, out int estimatedDuration))
+                    {
+                        return Flights.Where(f => f.EstimatedDuration == estimatedDuration).ToList();
+                    }
+                    break;
+
+
+            }
+            return new List<Flight>();
+
         }
     }
 }
