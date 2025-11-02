@@ -12,5 +12,8 @@ namespace AM.Core.Domain
         public int PlaneId { get; set; }
         public DateTime ManufactureDate { get; set; }
         public PlaneType PlaneType { get; set; }
+
+        //Navigation property
+        public IList<Flight> Flights { get; set; }
     }
 }

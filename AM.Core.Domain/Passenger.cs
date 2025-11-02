@@ -14,5 +14,9 @@ namespace AM.Core.Domain
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string TelNumber { get; set; }
+
+        // Navigation property
+        public virtual IList<Flight> Flights { get; set; }
+
     }
 }

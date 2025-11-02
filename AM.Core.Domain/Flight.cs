@@ -15,5 +15,10 @@ namespace AM.Core.Domain
         public DateTime EffectiveArrival { get; set; }
 
         public int EstimatedDuration { get; set; }
-        }
+
+        //Navigation property
+        public Plane TypePlane { get; set; }
+
+        public IList<Passenger> Passengers { get; set; }
+    }
 }
