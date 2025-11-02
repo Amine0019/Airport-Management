@@ -8,5 +8,7 @@ namespace AM.Core.Services
 {
     public interface IFlightService
     {
+        IList<DateTime>GetFlightDates(string destination);
+        
     }
 }

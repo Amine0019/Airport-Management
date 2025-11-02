@@ -11,5 +11,18 @@ namespace AM.Core.Services
     public class FlightService: IFlightService
     {
         public IList<Flight> Flights { get; set; }
+
+        public IList<DateTime> GetFlightDates(string destination)
+        {
+           IList<DateTime> flightDates = new List<DateTime>();
+              foreach (var flight in Flights)
+              {
+                if (flight.Destination == destination)
+                {
+                    flightDates.Add(flight.FlightDate);
+                }
+              }
+              return flightDates;
+        }
     }
 }
