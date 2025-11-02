@@ -19,5 +19,9 @@ Plane p3 = new Plane
     PlaneType = PlaneType.AIRBUS
 };
 
+Console.WriteLine(p);
+Console.WriteLine(p2);
+Console.WriteLine(p3);
+
 
 
