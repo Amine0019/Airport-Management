@@ -14,7 +14,9 @@ namespace AM.Core.Domain
         public override string ToString()
         {
             return "HealthInformation:" + HealthInformation +
-                   "Nationality" + Nationality;
+                   "Nationality" + Nationality+
+                   //equivalent a super en Java 
+                    base.ToString();
         }
     }
 }

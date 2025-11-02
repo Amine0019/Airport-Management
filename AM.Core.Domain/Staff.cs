@@ -17,7 +17,9 @@ namespace AM.Core.Domain
         {
             return "Slary:"+ Salary +
                    "Function:" + Function +
-                   "EmploymentDate:" + EmploymentDate;
+                   "EmploymentDate:" + EmploymentDate+
+                   //equivalent a Super en Java 
+                    base.ToString();
         }
 
     }
