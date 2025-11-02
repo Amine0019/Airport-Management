@@ -11,7 +11,7 @@ namespace AM.Core.Services
     public class FlightService: IFlightService
     {
         public IList<Flight> Flights { get; set; }
-
+        
         // returns a list of flight dates for a given destination
         public IList<DateTime> GetFlightDates(string destination)
         {
@@ -74,6 +74,12 @@ namespace AM.Core.Services
             }
             return new List<Flight>();
 
+        }
+
+        // returns a list of flights sorted by estimated duration in descending order
+        public IList<Flight> SortFlights()
+        {
+            return Flights.OrderByDescending(f => f.EstimatedDuration).ToList();
         }
     }
 }

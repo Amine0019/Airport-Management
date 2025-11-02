@@ -13,5 +13,7 @@ namespace AM.Core.Services
         IList<Flight> GetFlights(string filterType, string filterValue);
         IList<DateTime> GetFlightDatesLNQ(string destination);
 
+        IList<Flight> SortFlights();
+
     }
 }
