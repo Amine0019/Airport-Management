@@ -15,5 +15,14 @@ namespace AM.Core.Domain
 
         //Navigation property
         public IList<Flight> Flights { get; set; }
+
+        //ToString override
+        public override string ToString()
+        {
+            return "Capacity" + Capacity +
+                   "PlaneId:" + PlaneId +
+                   "ManufactureDate:" + ManufactureDate +
+                   "PlaneType:" + PlaneType;
+        }
     }
 }

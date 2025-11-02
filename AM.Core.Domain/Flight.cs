@@ -20,5 +20,16 @@ namespace AM.Core.Domain
         public Plane TypePlane { get; set; }
 
         public virtual IList<Passenger> Passengers { get; set; }
+
+        //ToString override
+        public override string ToString()
+        {
+            return "Destination:" + Destination + 
+                   "Departure:" + Departure +
+                   "FlightDate:" + FlightDate +
+                   "FlightId:" + FlightId +
+                   "EffectiveArrival:" + EffectiveArrival +
+                   "EstimatedDuration:" + EstimatedDuration;
+        }
     }
 }

@@ -12,5 +12,13 @@ namespace AM.Core.Domain
         public string Function { get; set; }
         public DateTime EmploymentDate { get; set; }
 
+        //ToString override
+        public override string ToString()
+        {
+            return "Slary:"+ Salary +
+                   "Function:" + Function +
+                   "EmploymentDate:" + EmploymentDate;
+        }
+
     }
 }

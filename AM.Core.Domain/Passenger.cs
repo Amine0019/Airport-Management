@@ -18,5 +18,16 @@ namespace AM.Core.Domain
         // Navigation property
         public virtual IList<Flight> Flights { get; set; }
 
+        // ToString override
+        public override string ToString()
+        {
+            return "EmailAddress:" + EmailAddress +
+                   "PassportNumber:" + PassportNumber +
+                   "BirthDate:" + BirthDate +
+                   "FirstName:" + FirstName +
+                   "LastName:" + LastName +
+                   "TelNumber:" + TelNumber;
+        }
+
     }
 }
