@@ -19,6 +19,6 @@ namespace AM.Core.Domain
         //Navigation property
         public Plane TypePlane { get; set; }
 
-        public IList<Passenger> Passengers { get; set; }
+        public virtual IList<Passenger> Passengers { get; set; }
     }
 }
