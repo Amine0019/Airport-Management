@@ -16,6 +16,23 @@ namespace AM.Core.Domain
         //Navigation property
         public IList<Flight> Flights { get; set; }
 
+        
+        //Parameterized constructor
+        public Plane(PlaneType pt,int capacity, DateTime date)
+        {
+            Capacity = capacity;
+            ManufactureDate = date;
+            PlaneType = pt;
+            
+        }
+
+
+        //Default constructor
+        public Plane()
+        {
+            
+        }
+        
         //ToString override
         public override string ToString()
         {
@@ -24,5 +41,8 @@ namespace AM.Core.Domain
                    "ManufactureDate:" + ManufactureDate +
                    "PlaneType:" + PlaneType;
         }
+
+       
+
     }
 }
